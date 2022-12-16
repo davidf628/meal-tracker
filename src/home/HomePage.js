@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMeals } from '../meals';
+import { useMeals, MealsList } from '../meals';
 
 export const HomePage = () => {
     const { meals, isLoading: isLoadingMeals, setMeals } = useMeals();
@@ -7,6 +7,13 @@ export const HomePage = () => {
     console.log(meals);
     
     return (
-        <h1>This is the homepage</h1>
+        <div className="page-container">
+            <div className="column">
+                <MealsList
+                    isLoading={isLoadingMeals}
+                    meals={meals}
+                />
+            </div>
+        </div>
     ) ;
 };
