@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SmallX } from '../ui';
 
-export const MealsListItem = ({ meal, date }) => (
+export const MealsListItem = ({ meal, date, onDelete }) => (
     <div className="list-item">
         {
             meal
@@ -11,7 +11,7 @@ export const MealsListItem = ({ meal, date }) => (
                         <h3>{date.getDate()}</h3>
                         <p>{meal.recipe.name}</p>
                         <div className="right-action">
-                            <SmallX />
+                            <SmallX onClick={() => onDelete(meal._id)}/>
                         </div>
                         </>
                     )

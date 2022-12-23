@@ -10,7 +10,7 @@ const next7Days = Array(7).fill().map((_, i) => {
 const datesAreSameDay = (date1, date2) =>
     date1.getYear() === date2.getYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
 
-export const MealsList = ({ isLoading, meals }) => (
+export const MealsList = ({ isLoading, meals, onDelete }) => (
     <div className="list-container">
         <h1>Planned Meals</h1>
         { isLoading 
@@ -22,6 +22,7 @@ export const MealsList = ({ isLoading, meals }) => (
                         key={index}
                         meal={mealForDay}
                         date={date}
+                        onDelete={onDelete}
                     />
                 )
             })}
